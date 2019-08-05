@@ -1,10 +1,11 @@
 {
   "autoload": {
     "psr-4": {
-  "App\\": "scr/"
-}
-},
-"require": {
-"php-di/php-di": "^6.0",
-}
+      "App\\": "scr/"
+    }
+  },
+  "require": {
+    "php-di/php-di": "^6.0",
+    "ocramius/proxy-manager": "^2.1"
+  }
 }

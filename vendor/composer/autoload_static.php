@@ -23,7 +23,9 @@ class ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
+            'Zend\\EventManager\\' => 18,
             'Zend\\Diactoros\\' => 15,
+            'Zend\\Code\\' => 10,
         ),
         'S' => 
         array (
@@ -38,6 +40,7 @@ class ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
             'PhpDocReader\\' => 13,
+            'PackageVersions\\' => 16,
         ),
         'L' => 
         array (
@@ -62,9 +65,17 @@ class ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
+        ),
         'Zend\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
+        'Zend\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
@@ -100,6 +111,10 @@ class ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b
         array (
             0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
         ),
+        'PackageVersions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+        ),
         'League\\Route\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/route/src',
@@ -122,11 +137,22 @@ class ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'ProxyManager\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbcbfe1a07b7e2a5b22edce1ea32c963b::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

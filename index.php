@@ -8,5 +8,5 @@ $builder->addDefinitions('config.php');
 
 $container = $builder->build();
 
-
-var_dump($container->get('boob'));
+echo '<pre>';
+var_dump($container->get('Date2'));
